@@ -1,0 +1,65 @@
+set nocompatible	"on retire la compatibilité avec VI
+set number		"permet d'avoir le numéro de ligne sur la gauche
+
+syntax on		"Activer la colorisation syntaxique
+filetype off		
+
+
+" Ajout de Vundle au runtime path et initialisation
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Valloric/YouCompleteMe'
+
+
+call vundle#end()
+filetype plugin indent on "Permet a VIM de s'adapter aux conventions des divers language de programmation (C, C++, Java, Bash ...)
+
+
+"###############################################################################
+"
+" Description des plugin : 
+"
+"	- NerdCommenter : Permet de personnaliser les fonctions permettant de commenter le code.
+"
+" 	- Nerdtree : Ce plugin permet à l'aide de la commande :NERDTree d'afficher l'arboréscence du fichier où nous nous trouons et de pouvoir y naviguer afin d'ouvrir par exemple un fichier ou en vérifier sa construction. Ce plugin divise le terminal en deux verticalement. Il y a donc 2 buffers d'ouverts.
+
+"	- Vim-Airline : Ce plugin permet d'ajouter un ligne coloriser en bas de la fenêtre afin de mieux distinguer d'un simple coup d'oeil dans quel mode on se situe (Commande, Visuel ou Insertion).
+"
+"	- Vim-Airline-Themes : Ce plugin permet la modification de la bare du Plugin Vim-Airline afin de pouvoir changer sa couleur. On peut utiliser la commande ':AirLineTheme simple' pour changer letheme à la volée ou alors l'initialiser dans au lancement de vim en modifiant le fichier vimrc avec cette ligne let g:airline_theme='simple'. Par défaut le thème utilisé est 'dark'.
+"
+"	- Vim-Fugitive : Ce plugin permet de manipuler directement des fichiers gitté (donc faisant parti d'un réposit git) avec des commande git. e.g : :Gcommit, :Gblame, :Gstatus ...
+"
+"	- Vim-Gitgutter : Ce plugin permet de voir dans la marge les modification apporté aux fichiers gittés. Ajout, Suppression et modifications. 
+"
+"	- YouCompleteMe : Ce plugin permet de proposer de la complétion. Par exemple, lors d'une écriture d'un chemin (absolu ou relatif), le plugin va proposer directement une liste de résultat cohérente des prochains fichiers ou répertoires.
+"
+"################################################################################
+
+
+"Commandes utilisées pour le plugin NerdCommenter :
+
+let g:NERDCustomDelimiters = { 'c': { 'left': '#*','right': '*#' } } "Permet de changer ici la méthode de commentaire en C de /* ... */ en #* ... *#
+
+
+"Commandes utilisées pour le plugin Nerdtree : 
+
+autocmd vimenter * NERDTree "Permet de lancer la commande :NERDTree au démarrage. 
+
+"Commandes utilisées pour le plugin Vim-Airline :
+
+let g:airline#extensions#tabline#enabled = 1 "Permet d'afficher les buffers d'ouverts en bas permettant de voir les buffers ouvert d'un simple coup d'oiel.
+
+"Commandes utilisées pour Vim-Gitgutter :
+
+"Si je travail dans un répo git, j'active la commande :GitGutterLineHighlightsEnable qui me permet de surligner les lignes modifiées et ajoutées.
+
+let g:gitgutter_max_signs = 2500  " Permet de fixer une limite à la quantité max de signe de modifications visible dans la marge du fichier. Si il y a 2501 signes, alors le premier signes est supprimé pour garder un comtpe de 2500 maximum.
