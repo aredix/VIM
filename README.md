@@ -2,7 +2,7 @@
 
 Alors déjà, Vundle c'est mieux que Pathogen 
 
-#NE PAS OUBLIER LE :PluginInstall APRÈS LE CLONE DU REPO.
+# NE PAS OUBLIER LE :PluginInstall APRÈS LE CLONE DU REPO.
 
 Si YouCompleteMe ne fonctionne pas, veillez à deux choses :
 
