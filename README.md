@@ -19,7 +19,9 @@ J'ai exécuté le fichier install.sh mais je n'ai aucun plugin, pourquoi ?
   - Il te faut lancer vim et taper la commande :PluginInstall pour récupérer les plugins. Cela résoudra aussi les erreurs de syntaxe du fichier vimrc au démarrage.
   
 
+# Lien du répo : 
 
+https://github.com/aredix/VIM
 
 
   
