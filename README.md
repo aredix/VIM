@@ -1,11 +1,29 @@
 # VIM
 
-Alors déjà, Vundle c'est mieux que Pathogen 
+# Alors déjà, Vundle c'est mieux que Pathogen 
 
-# NE PAS OUBLIER LE :PluginInstall APRÈS LE CLONE DU REPO.
+# Installation : 
 
-Si YouCompleteMe ne fonctionne pas, veillez à deux choses :
+<code>bash install.sh</code> 
+ou 
+<code>chmod +x install.sh && ./install.sh</code>
 
-  1- Que le fichier ai une extension
-  2- D'avoir lancé au préalable le script python.py à l'aide de la commande <code>python3 install.py --clang-completer
+# Description du script par étapes :
+
+  - Renomme le dossier vim en .vim
+  - Supprime le répertoire ~/.vim existant
+  - Supprime le fichier ~/.vimrc existant
+  - Déplace le dossier .vim dans le répertoire utilisateur
+  - Crée un lien symbolique de ~/.vimrc qui pointe vers ~/.vim/vimrc
+  - Compile le module YCMD du plugin YouCompleteME
+  
+# Q&A :
+
+J'ai exécuté le fichier install.sh mais je n'ai aucun plugin, pourquoi ?
+  - Il te faut lancer vim et taper la commande :PluginInstall pour récupérer les plugins. Cela résoudra aussi les erreurs de syntaxe du fichier vimrc au démarrage.
+  
+
+
+
+
   
