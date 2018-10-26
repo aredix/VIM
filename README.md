@@ -1,7 +1,3 @@
-# VIM
-
-# Alors déjà, Vundle c'est mieux que Pathogen 
-
 # Installation : 
 
 <code>bash install.sh</code> 
